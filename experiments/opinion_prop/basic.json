@@ -1,0 +1,11 @@
+{
+    "network_size": [10, 20],
+    "network_generation_distribution": {
+        "model_name": "Barabasi-Albert",
+        "m": 4
+    },
+    "subpopulation_distribution": {
+        "speckle_distribution_name": "bernoulli",
+        "p": 0.7
+    }
+}
