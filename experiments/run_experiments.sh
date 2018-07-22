@@ -33,14 +33,13 @@ echo "Running population-based sensor experiments!"
 # echo "Seed set to $seed"
 
 # a small python script checking whether netprop is installed
-chk_script='import pkgutil;
-exit(not pkgutil.find_loader("netprop"))'
+chk_script=
 
-if python -c "$chk_sciprt"; then
-    echo 'netprop found'
+if python -c 'import pkgutil; exit(not pkgutil.find_loader("experinet"))'; then
+    echo 'experinet found'
     SDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-    netprop experiment $SDIR --recursive $verbosity
+    experinet bydir $SDIR --recursive $verbosity
 else
-    echo 'netprop not found'
+    echo 'experinet not found'
 fi
 shift $((OPTIND - 1))
